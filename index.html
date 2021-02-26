@@ -11,7 +11,7 @@
     <header class="header">
         <nav class="menu">
             <a class="logo" href="/"></a> 
-            <div class="menu-icon-open"></div>
+            <div class="menu-icon-open" onclick="toggleMenu(true)"></div>
             <ul class="menu-links">
                 <li>Waze</li>
                 <li>Carpool</li>
@@ -57,25 +57,45 @@
         </div>
 
     </section>
-    <nav class="hamburger-menu">
+    <nav id="hamburger-menu" class="hamburger-menu">
         <div class="hamburger-menu-header">
-            <!-- <a class="logo" href="/">https://www.waze.com/webcms/static/compiled/eab8d17c745136dfb5b5c40fb8b2564a.svg</a> -->
-            <div class="menu-icon-close"></div>
+            <a class="logo" href="/"></a> 
+            <div class="menu-icon-close" onclick="toggleMenu(false)"></div>
         </div>
         <ul class="hamburger-menu-links">
-            <li>Waze</li>
-            <li>Carpool</li>
-            <li>Parceiros</li>
+            <li><a href="/">Waze</a></li>
+            <li><a href="/">Carpool</a></li>
+            <li><a href="/">Parceiros</a></li>
         </ul>
         <ul class="hamburger-menu-links">
-            <li>Pegue carona</li>
-            <li>Mapa ao vivo</li>
-            <li>Baixar</li>
+            <li><a href="/">Pegue carona</a></li>
+            <li><a href="/">Mapa ao vivo</a></li>
+            <li><a href="/">Baixar</a></li>
         </ul>
         <ul class="hamburger-menu-links">
-            <li>Suporte</li>
-            <li>Login</li>
+            <li><a href="/">Suporte</a></li>
+            <li><a href="/">Login</a></li>
         </ul>
     </nav>
+
+    <script type="text/javascript">
+        let menu = document.getElementById("hamburger-menu")
+
+        function toggleMenu(state) {
+            if(state){
+                menu.animate([
+                    { right: "100vw" },
+                    { right: "0" }
+                ], { duration: 400 });
+                menu.style.right = "0";
+            }else {
+                menu.animate([
+                    { right: "0" },
+                    { right: "100vw" }
+                ], { duration: 400 });
+                menu.style.right = "100vw";
+            }
+        }
+    </script>
 </body>
 </html>

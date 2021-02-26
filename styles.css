@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Boing Regular";
-    src: url("/assets/fonts/boing-400.woff2") format("woff2");
+    src: url("assets/fonts/boing-400.woff2") format("woff2");
 };
 
 @font-face {
     font-family: "Boing Medium";
-    src: url("/assets/fonts/boing-500.woff2") format("woff2");
+    src: url("assets/fonts/boing-500.woff2") format("woff2");
 }
 
 html, body {
@@ -137,10 +137,6 @@ html, body {
     grid-row: 1 / 3;
 }
 
-.card-logo {
-
-}
-
 .card-title {
     font-size: 54px;
     line-height: 1.05;
@@ -187,7 +183,67 @@ html, body {
 .icon-right {right: 60px; left: auto}
 
 .hamburger-menu {
-    display: none;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 100vw;
+    height: calc(100vh - 40px);
+    width: calc(100vw - 40px);
+    padding: 20px;
+    z-index: 2;
+    background: #3cf;
+}
+
+.hamburger-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-icon-close {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 12px;
+    cursor: pointer;
+    
+}
+
+.menu-icon-close::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(45deg);
+    background-color: #fff;
+}
+
+.menu-icon-close::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(-45deg);
+    background-color: #fff;
+}
+
+.hamburger-menu-links {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.hamburger-menu-links li a{
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 @media (max-width: 910px) {
@@ -275,24 +331,4 @@ html, body {
     .card-link {
         font-size: 16px;
     }
-}
-
-.hamburger-menu-header {
-
-}
-
-.menu-icon-close {
-
-}
-
-.hamburger-menu-links {
-
-}
-
-.hamburger-menu-links {
-
-}
-
-.hamburger-menu-links {
-
 }
